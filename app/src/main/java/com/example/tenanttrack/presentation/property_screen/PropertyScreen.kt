@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.tenanttrack.R
+import com.example.tenanttrack.data.local.entities.PropertyModelType
 import com.example.tenanttrack.presentation.components.FilterChips
 import com.example.tenanttrack.presentation.components.PropertyHeaderBar
 import com.example.tenanttrack.presentation.components.SearchBar
@@ -59,6 +60,9 @@ fun PropertyScreen(navController: NavController) {
 @Composable
 fun PropertyContentScreen() {
     var searchText by remember { mutableStateOf("") }
+    val categories: List<String> = listOf("All") + PropertyModelType.entries.map { it.name }
+    var category by remember { mutableStateOf("All") }
+
     Column(modifier = Modifier.background(Gray50)) {
         PropertyHeaderBar(
             title = stringResource(id = R.string.tab1_title),
@@ -78,9 +82,10 @@ fun PropertyContentScreen() {
         )
 
         FilterChips(
-            categories = listOf("All", "Motel", "Apartment", "Hotel", "House", "Castle", "Hut"),
-            selectedCategory = "All",
-            onCategorySelected = {})
+            categories = categories,
+            selectedCategory = category,
+            onCategorySelected = { category = it }
+        )
     }
 }
 

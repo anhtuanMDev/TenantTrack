@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.example.tenanttrack.R
+import com.example.tenanttrack.data.local.entities.TenantStatus
 import com.example.tenanttrack.presentation.components.FilterChips
 import com.example.tenanttrack.presentation.components.PropertyHeaderBar
 import com.example.tenanttrack.presentation.components.SearchBar
@@ -28,6 +29,8 @@ fun TenantScreen(navController: NavController) {
 @Composable
 fun TenantContentScreen() {
     var searchText by remember { mutableStateOf("") }
+    val status = listOf("All Tenants") + TenantStatus.entries.map { it.name }
+    var category by remember { mutableStateOf("All Tenants") }
 
     Column(modifier = Modifier.background(Gray50)) {
         PropertyHeaderBar(title = stringResource(id = R.string.tab2_title))
@@ -36,8 +39,8 @@ fun TenantContentScreen() {
             placeholder = stringResource(id = R.string.tab2_search_placeholder)
         )
         FilterChips(
-            categories = listOf("All Tenants", "Active", "Pending", "Expired"),
+            categories = status,
             selectedCategory = "All Tenants",
-            onCategorySelected = {})
+            onCategorySelected = { category = it })
     }
 }

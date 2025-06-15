@@ -15,10 +15,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.tenanttrack.ui.theme.Blue
+import com.example.tenanttrack.ui.theme.Gray200
+import com.example.tenanttrack.ui.theme.Gray900
+import com.example.tenanttrack.ui.theme.White
 
 @Composable
 fun FilterChips(
@@ -27,6 +32,7 @@ fun FilterChips(
     onCategorySelected: (String) -> Unit,
 ) {
     val scrollState = rememberScrollState()
+    val shape = RoundedCornerShape(50)
 
     Row(
         modifier = Modifier
@@ -37,19 +43,20 @@ fun FilterChips(
     ) {
         categories.forEachIndexed { index, category ->
             val isSelected = category == selectedCategory
-            val backgroundColor = if (isSelected) Color(0xFF2563EB) else Color(0xFFF2F4F7)
-            val contentColor = if (isSelected) Color.White else Color(0xFF4B5563)
+            val backgroundColor = if (isSelected) Blue else Gray200
+            val contentColor = if (isSelected) White else Gray900
 
             val startPadding = if (index == 0) 16.dp else 0.dp
             val endPadding = if (index == categories.lastIndex) 16.dp else 0.dp
 
             Surface(
-                shape = RoundedCornerShape(50),
+                shape = shape,
                 color = backgroundColor,
                 shadowElevation = 0.dp,
                 modifier = Modifier
                     .padding(start = startPadding, end = endPadding)
                     .height(36.dp)
+                    .clip(shape)
                     .clickable { onCategorySelected(category) }
             ) {
                 Box(

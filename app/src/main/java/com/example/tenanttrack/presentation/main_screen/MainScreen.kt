@@ -1,7 +1,9 @@
 package com.example.tenanttrack.presentation.main_screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
@@ -12,13 +14,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.tenanttrack.R
 import com.example.tenanttrack.presentation.navigation.Screen
 import com.example.tenanttrack.ui.theme.Blue
 import com.example.tenanttrack.ui.theme.Gray400
@@ -77,7 +79,22 @@ fun MainScreen(navController: NavHostController) {
                     )
                 }
             }
+        },
+        floatingActionButton = {
+            if (currentRoute.route == Screen.Property.route) {
+                FloatingActionButton(
+                    containerColor = Blue,
+                    onClick = { /* FAB click */ }
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.plus),
+                        contentDescription = "Add",
+                        tint = White
+                    )
+                }
+            }
         }
+
     ) { _ ->
         NavHost(
             navController = navController,
