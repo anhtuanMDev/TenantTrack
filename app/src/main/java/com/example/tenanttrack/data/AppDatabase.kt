@@ -2,6 +2,8 @@ package com.example.tenanttrack.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.tenanttrack.converters.Converters
 import com.example.tenanttrack.data.local.dao.PaymentRecordDAO
 import com.example.tenanttrack.data.local.dao.PropertyDAO
 import com.example.tenanttrack.data.local.dao.RentingTypeDAO
@@ -22,6 +24,7 @@ import com.example.tenanttrack.data.local.entities.TenantTable
         PaymentRecordTable::class
     ], version = 1
 )
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun propertyDao(): PropertyDAO
     abstract fun roomDao(): RoomDAO

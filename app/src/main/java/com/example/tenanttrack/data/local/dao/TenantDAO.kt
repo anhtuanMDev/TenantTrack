@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.tenanttrack.data.local.entities.TenantStatus
 import com.example.tenanttrack.data.local.entities.TenantTable
 
@@ -43,6 +44,6 @@ interface TenantDAO {
     @Query("UPDATE tenanttable SET status = :status WHERE uid = :tenantID")
     fun updateStatus(tenantID: Int, status: String)
 
-    @Query("UPDATE tenanttable SET room_id = :roomID, relationship = :relationship, status = :status, name = :name, image = :image, verified = :verified, joined_at = :joinedAt, leave_at = :leaveAt, number_id = :numberID")
-    fun updateTenant(tenantID: Int, roomID: Int, relationship: String, status: String, name: String, image: String?, verified: Boolean, joinedAt: Int, leaveAt: Int?, numberID: String, email: String, phoneNumber: String, emName: String, emNumber: String)
+    @Update
+    fun updateTenant(tenant: TenantTable)
 }
