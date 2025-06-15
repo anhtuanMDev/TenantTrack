@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">TenantTrack</string>
+
+    <string name="empty_string" />
+
+    // for tab header
+    <string name="tab1_title">Properties</string>
+    <string name="tab2_title">Tenants Information</string>
+    <string name="tab3_title">Contracts Generator</string>
+    <string name="tab4_title">Settings &amp; Reports</string>
+
+    // for tab label
+    <string name="tab1_label">Properties</string>
+    <string name="tab2_label">Tenants</string>
+    <string name="tab3_label">Contracts</string>
+    <string name="tab4_label">Settings</string>
+
+    // Property Screen
+    <string name="tab1_search_placeholder">Enter Property\'s Name</string>
+
+    // Tenant Screen
+    <string name="tab2_search_placeholder">Enter Tenant\'s Name</string>
+
+    // Setting Screen
+    <string name="tab4_section1_header">Financial Reports</string>
+    <string name="tab4_section1_title1">Revenue Report</string>
+    <string name="tab4_section1_subtitle1">Monthly &amp; yearly analytics</string>
+    <string name="tab4_section1_title2">Occupancy Analytics</string>
+    <string name="tab4_section1_subtitle2">Room utilization stats</string>
+    <string name="tab4_section1_title3">Tenant Turnover</string>
+    <string name="tab4_section1_subtitle3">Retention statistics</string>
+
+    <string name="tab4_section2_header">Data Export</string>
+    <string name="tab4_section2_title1">Government Reports</string>
+    <string name="tab4_section2_subtitle1">Export for compliance</string>
+    <string name="tab4_section2_title2">Accounting Export</string>
+    <string name="tab4_section2_subtitle2">CSV, Excel formats</string>
+
+    <string name="tab4_section3_header">App Settings</string>
+    <string name="tab4_section3_title1">App Preferences</string>
+    <string name="tab4_section3_subtitle1">Notifications, language</string>
+
+    <string name="tab4_section4_header">Support &amp; Information</string>
+    <string name="tab4_section4_title1">Help Documentation</string>
+    <string name="tab4_section4_subtitle1">User Guide &amp; FAQs</string>
+    <string name="tab4_section4_title2">Contact Support</string>
+    <string name="tab4_section4_subtitle2">Get help from our team</string>
+    <string name="tab4_section4_title3">App Version</string>
+    <string name="tab4_section4_subtitle3">v2.1.4 (build 2024.1)</string>
+
+
+</resources>

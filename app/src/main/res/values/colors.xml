@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    // Primary colors
+    <color name="blue">#2563eb</color>
+    <color name="lightBlue">#dbeafe</color>
+    <color name="green">#16a34a</color>
+    <color name="orange">#ea580c</color>
+    <color name="red">#dc2626</color>
+    <color name="background">#F8F9FA</color>
+    <color name="cardBackground">#FFFFFF</color>
+
+    // Text colors
+    <color name="textPrimary">#1F2937</color>
+    <color name="textSecondary">#6B7280</color>
+    <color name="textTertiary">#9CA3AF</color>
+    <color name="border">#E5E7EB</color>
+
+    // Neutral colors
+    <color name="gray50">#f8fafc</color>
+    <color name="gray100">#f1f5f9</color>
+    <color name="gray200">#e2e8f0</color>
+    <color name="gray400">#94a3b8</color>
+    <color name="gray600">#475569</color>
+    <color name="gray900">#0f172a</color>
+
+    // Status colors
+    <color name="active">#16a34a</color>
+    <color name="success">#10B981</color>
+    <color name="successAlt">#22C55E</color>
+    <color name="warning">#F59E0B</color>
+    <color name="maintenance">#ea580c</color>
+    <color name="inactive">#94a3b8</color>
+    <color name="occupied">#16a34a</color>
+    <color name="vacant">#9CA3AF</color>
+    <color name="paid">#16a34a</color>
+    <color name="pending">#F59E0B</color>
+    <color name="overdue">#EF4444</color>
+    <color name="error">#EF4444</color>
+</resources>
