@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.tenanttrack.presentation.add_property.AddPropertyScreen
 import com.example.tenanttrack.presentation.main_screen.MainScreen
 
 @Composable
@@ -16,7 +17,10 @@ fun RootNavGraph(navController: NavHostController) {
     ) {
         composable(Graph.MAIN) {
             val bottomNavController = rememberNavController()
-            MainScreen(navController = bottomNavController)
+            MainScreen(bottomNav = bottomNavController, rootNavController = navController)
+        }
+        composable(Graph.ADD_PROPERTY) {
+            AddPropertyScreen(navController)
         }
     }
 }

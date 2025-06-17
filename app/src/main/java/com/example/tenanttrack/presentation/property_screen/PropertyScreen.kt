@@ -60,7 +60,7 @@ fun PropertyScreen(navController: NavController) {
 @Composable
 fun PropertyContentScreen() {
     var searchText by remember { mutableStateOf("") }
-    val categories: List<String> = listOf("All") + PropertyModelType.entries.map { it.name }
+    val categories: List<String> = listOf("All") + PropertyModelType.entries.map { stringResource(it.label) }
     var category by remember { mutableStateOf("All") }
 
     Column(modifier = Modifier.background(Gray50)) {

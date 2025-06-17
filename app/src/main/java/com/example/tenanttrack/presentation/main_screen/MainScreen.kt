@@ -1,6 +1,5 @@
 package com.example.tenanttrack.presentation.main_screen
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.FloatingActionButton
@@ -21,6 +20,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.tenanttrack.R
+import com.example.tenanttrack.presentation.navigation.Graph
 import com.example.tenanttrack.presentation.navigation.Screen
 import com.example.tenanttrack.ui.theme.Blue
 import com.example.tenanttrack.ui.theme.Gray400
@@ -29,8 +29,8 @@ import com.example.tenanttrack.ui.theme.White
 
 @Suppress("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainScreen(navController: NavHostController) {
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
+fun MainScreen(rootNavController: NavHostController, bottomNav: NavHostController) {
+    val navBackStackEntry by bottomNav.currentBackStackEntryAsState()
     val currentRoute = Screen.fromRoute(navBackStackEntry?.destination?.route)
 
     Scaffold(
@@ -47,8 +47,8 @@ fun MainScreen(navController: NavHostController) {
                     NavigationBarItem(
                         selected = currentRoute.route == destination.route,
                         onClick = {
-                            navController.navigate(destination.route) {
-                                popUpTo(navController.graph.startDestinationId) {
+                            bottomNav.navigate(destination.route) {
+                                popUpTo(bottomNav.graph.startDestinationId) {
                                     saveState = true
                                 }
                                 launchSingleTop = true
@@ -84,7 +84,7 @@ fun MainScreen(navController: NavHostController) {
             if (currentRoute.route == Screen.Property.route) {
                 FloatingActionButton(
                     containerColor = Blue,
-                    onClick = { /* FAB click */ }
+                    onClick = { rootNavController.navigate(Graph.ADD_PROPERTY) }
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.plus),
@@ -97,10 +97,10 @@ fun MainScreen(navController: NavHostController) {
 
     ) { _ ->
         NavHost(
-            navController = navController,
+            navController = bottomNav,
             startDestination = Screen.Property.route,
         ) {
-            bottomTabNavGraph(navController)
+            bottomTabNavGraph(bottomNav)
         }
     }
 }

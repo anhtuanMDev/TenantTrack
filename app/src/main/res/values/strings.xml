@@ -2,6 +2,11 @@
     <string name="app_name">TenantTrack</string>
 
     <string name="empty_string" />
+    <string name="option_cancel">Cancel</string>
+    <string name="option_save">Save</string>
+
+    // for nav header
+    <string name="header_add_property">Add Property</string>
 
     // for tab header
     <string name="tab1_title">Properties</string>
@@ -48,5 +53,110 @@
     <string name="tab4_section4_title3">App Version</string>
     <string name="tab4_section4_subtitle3">v2.1.4 (build 2024.1)</string>
 
+    // for add property form
+    <string name="add_property_title1">Property Name</string>
+    <string name="add_property_placeholder1">Enter property name</string>
+    <string name="add_property_title2">Property Type</string>
+    <string name="add_property_title3">Property Address</string>
+    <string name="add_property_placeholder3">Enter property address</string>
+    <string name="add_property_title4">Total Rooms</string>
+    <string name="add_property_placeholder4">Enter number of rooms</string>
+    <string name="add_property_title5">Property Status</string>
+    <string name="add_property_title6">Property Image</string>
+    <string name="add_property_placeholder6">Tap to add image</string>
+
+    // for property type
+    <string name="property_type_apartment">Apartment</string>
+    <string name="property_type_motel">Motel</string>
+    <string name="property_type_house">House</string>
+    <string name="property_type_hut">Hut</string>
+
+    // for property status
+    <string name="property_status_maintained">Maintained</string>
+    <string name="property_status_vacant">Vacant</string>
+    <string name="property_status_occupied">Occupied</string>
+    <string name="property_status_under_construction">Under Construction</string>
+
+    // for room amenities
+
+    <string name="amenities_ac">Air Conditioning</string>
+    <string name="amenities_heating">Heating</string>
+    <string name="amenities_wifi">Wi-Fi</string>
+    <string name="amenities_tv">TV</string>
+    <string name="amenities_washer">Washer</string>
+    <string name="amenities_dryer">Dryer</string>
+    <string name="amenities_iron">Iron / Ironing board</string>
+    <string name="amenities_hair_dryer">Hair Dryer</string>
+    <string name="amenities_closet">Closet / Wardrobe</string>
+    <string name="amenities_work_desk">Work Desk</string>
+    <string name="amenities_balcony">Balcony / Terrace</string>
+    <string name="amenities_fireplace">Fireplace</string>
+
+    <string name="amenities_refrigerator">Refrigerator</string>
+    <string name="amenities_stove">Stove / Cooktop</string>
+    <string name="amenities_oven">Oven</string>
+    <string name="amenities_microwave">Microwave</string>
+    <string name="amenities_dishwasher">Dishwasher</string>
+    <string name="amenities_electric_kettle">Electric Kettle</string>
+    <string name="amenities_coffee_maker">Coffee Maker</string>
+    <string name="amenities_toaster">Toaster</string>
+    <string name="amenities_kitchen_utensils">Kitchen Utensils</string>
+    <string name="amenities_dining_table">Dining Table</string>
+    <string name="amenities_cooking_basics">Cooking Basics</string>
+
+    <string name="amenities_bed_linens">Bed Linens</string>
+    <string name="amenities_extra_blankets">Extra Pillows and Blankets</string>
+    <string name="amenities_blackout_curtains">Blackout Curtains</string>
+    <string name="amenities_nightstand">Nightstand / Lamp</string>
+
+    <string name="amenities_towels">Towels</string>
+    <string name="amenities_shampoo">Shampoo / Conditioner</string>
+    <string name="amenities_body_soap">Body Soap</string>
+    <string name="amenities_toilet_paper">Toilet Paper</string>
+    <string name="amenities_hot_water">Hot Water</string>
+    <string name="amenities_bathtub">Bathtub</string>
+    <string name="amenities_shower">Shower</string>
+
+    <string name="amenities_elevator">Elevator</string>
+    <string name="amenities_security_system">Security System</string>
+    <string name="amenities_concierge">Concierge / Doorman</string>
+    <string name="amenities_gym">Gym / Fitness Center</string>
+    <string name="amenities_swimming_pool">Swimming Pool</string>
+    <string name="amenities_garden">Garden</string>
+    <string name="amenities_playground">Playground</string>
+    <string name="amenities_rooftop">Rooftop Access</string>
+    <string name="amenities_laundry_room">Laundry Room</string>
+    <string name="amenities_common_area">Common Area / Lounge</string>
+
+    <string name="amenities_free_parking">Free Parking on Premises</string>
+    <string name="amenities_paid_parking">Paid Parking</string>
+    <string name="amenities_street_parking">Street Parking</string>
+    <string name="amenities_ev_charger">EV Charger</string>
+    <string name="amenities_bike_storage">Bicycle Storage</string>
+    <string name="amenities_shuttle_service">Shuttle Service</string>
+
+    <string name="amenities_pet_friendly">Pet Friendly</string>
+    <string name="amenities_crib">Crib</string>
+    <string name="amenities_high_chair">High Chair</string>
+    <string name="amenities_toys">Children’s Books or Toys</string>
+    <string name="amenities_safety_gates">Baby Safety Gates</string>
+
+    <string name="amenities_high_speed_internet">High-Speed Internet</string>
+    <string name="amenities_ethernet">Ethernet Connection</string>
+    <string name="amenities_printer">Printer / Scanner</string>
+    <string name="amenities_workspace">Laptop-Friendly Workspace</string>
+
+    <string name="amenities_private_entrance">Private Entrance</string>
+    <string name="amenities_patio">Patio / Deck</string>
+    <string name="amenities_outdoor_furniture">Outdoor Furniture</string>
+    <string name="amenities_bbq_grill">BBQ Grill</string>
+    <string name="amenities_fire_pit">Fire Pit</string>
+    <string name="amenities_yard">Garden / Yard</string>
+
+    <string name="amenities_smoke_detector">Smoke Detector</string>
+    <string name="amenities_co_detector">Carbon Monoxide Detector</string>
+    <string name="amenities_first_aid_kit">First Aid Kit</string>
+    <string name="amenities_fire_extinguisher">Fire Extinguisher</string>
+    <string name="amenities_security_cameras">Security Cameras</string>
 
 </resources>

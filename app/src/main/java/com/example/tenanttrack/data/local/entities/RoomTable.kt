@@ -1,8 +1,11 @@
 package com.example.tenanttrack.data.local.entities
 
+import androidx.annotation.StringRes
+import androidx.compose.ui.res.stringResource
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.tenanttrack.R
 
 @Entity
 data class RoomTable(
@@ -27,96 +30,94 @@ enum class RoomStatus {
     Maintain
 }
 
-enum class RoomAmenities(val displayName: String) {
+enum class RoomAmenities(@StringRes val displayName: Int) {
     // General
-    AC("Air Conditioning"),
-    HEATING("Heating"),
-    WIFI("Wi-Fi"),
-    TV("TV"),
-    WASHER("Washer"),
-    DRYER("Dryer"),
-    IRON("Iron / Ironing board"),
-    HAIR_DRYER("Hair Dryer"),
-    CLOSET("Closet / Wardrobe"),
-    WORK_DESK("Work Desk"),
-    BALCONY("Balcony / Terrace"),
-    FIREPLACE("Fireplace"),
+    AC(R.string.amenities_ac),
+    HEATING(R.string.amenities_heating),
+    WIFI(R.string.amenities_wifi),
+    TV(R.string.amenities_tv),
+    WASHER(R.string.amenities_washer),
+    DRYER(R.string.amenities_dryer),
+    IRON(R.string.amenities_iron),
+    HAIR_DRYER(R.string.amenities_hair_dryer),
+    CLOSET(R.string.amenities_closet),
+    WORK_DESK(R.string.amenities_work_desk),
+    BALCONY(R.string.amenities_balcony),
+    FIREPLACE(R.string.amenities_fireplace),
 
     // Kitchen
-    REFRIGERATOR("Refrigerator"),
-    STOVE("Stove / Cooktop"),
-    OVEN("Oven"),
-    MICROWAVE("Microwave"),
-    DISHWASHER("Dishwasher"),
-    ELECTRIC_KETTLE("Electric Kettle"),
-    COFFEE_MAKER("Coffee Maker"),
-    TOASTER("Toaster"),
-    KITCHEN_UTENSILS("Kitchen Utensils"),
-    DINING_TABLE("Dining Table"),
-    COOKING_BASICS("Cooking Basics"),
+    REFRIGERATOR(R.string.amenities_refrigerator),
+    STOVE(R.string.amenities_stove),
+    OVEN(R.string.amenities_oven),
+    MICROWAVE(R.string.amenities_microwave),
+    DISHWASHER(R.string.amenities_dishwasher),
+    ELECTRIC_KETTLE(R.string.amenities_electric_kettle),
+    COFFEE_MAKER(R.string.amenities_coffee_maker),
+    TOASTER(R.string.amenities_toaster),
+    KITCHEN_UTENSILS(R.string.amenities_kitchen_utensils),
+    DINING_TABLE(R.string.amenities_dining_table),
+    COOKING_BASICS(R.string.amenities_cooking_basics),
 
     // Bedroom
-    BED_LINENS("Bed Linens"),
-    EXTRA_BLANKETS("Extra Pillows and Blankets"),
-    BLACKOUT_CURTAINS("Blackout Curtains"),
-    NIGHTSTAND("Nightstand / Lamp"),
+    BED_LINENS(R.string.amenities_bed_linens),
+    EXTRA_BLANKETS(R.string.amenities_extra_blankets),
+    BLACKOUT_CURTAINS(R.string.amenities_blackout_curtains),
+    NIGHTSTAND(R.string.amenities_nightstand),
 
     // Bathroom
-    TOWELS("Towels"),
-    SHAMPOO("Shampoo / Conditioner"),
-    BODY_SOAP("Body Soap"),
-    TOILET_PAPER("Toilet Paper"),
-    HOT_WATER("Hot Water"),
-    BATHTUB("Bathtub"),
-    SHOWER("Shower"),
+    TOWELS(R.string.amenities_towels),
+    SHAMPOO(R.string.amenities_shampoo),
+    BODY_SOAP(R.string.amenities_body_soap),
+    TOILET_PAPER(R.string.amenities_toilet_paper),
+    HOT_WATER(R.string.amenities_hot_water),
+    BATHTUB(R.string.amenities_bathtub),
+    SHOWER(R.string.amenities_shower),
 
     // Building
-    ELEVATOR("Elevator"),
-    SECURITY_SYSTEM("Security System"),
-    CONCIERGE("Concierge / Doorman"),
-    GYM("Gym / Fitness Center"),
-    SWIMMING_POOL("Swimming Pool"),
-    GARDEN("Garden"),
-    PLAYGROUND("Playground"),
-    ROOFTOP("Rooftop Access"),
-    LAUNDRY_ROOM("Laundry Room"),
-    COMMON_AREA("Common Area / Lounge"),
+    ELEVATOR(R.string.amenities_elevator),
+    SECURITY_SYSTEM(R.string.amenities_security_system),
+    CONCIERGE(R.string.amenities_concierge),
+    GYM(R.string.amenities_gym),
+    SWIMMING_POOL(R.string.amenities_swimming_pool),
+    GARDEN(R.string.amenities_garden),
+    PLAYGROUND(R.string.amenities_playground),
+    ROOFTOP(R.string.amenities_rooftop),
+    LAUNDRY_ROOM(R.string.amenities_laundry_room),
+    COMMON_AREA(R.string.amenities_common_area),
 
     // Parking
-    FREE_PARKING("Free Parking on Premises"),
-    PAID_PARKING("Paid Parking"),
-    STREET_PARKING("Street Parking"),
-    EV_CHARGER("EV Charger"),
-    BIKE_STORAGE("Bicycle Storage"),
-    SHUTTLE_SERVICE("Shuttle Service"),
+    FREE_PARKING(R.string.amenities_free_parking),
+    PAID_PARKING(R.string.amenities_paid_parking),
+    STREET_PARKING(R.string.amenities_street_parking),
+    EV_CHARGER(R.string.amenities_ev_charger),
+    BIKE_STORAGE(R.string.amenities_bike_storage),
+    SHUTTLE_SERVICE(R.string.amenities_shuttle_service),
 
     // Pet / Family
-    PET_FRIENDLY("Pet Friendly"),
-    CRIB("Crib"),
-    HIGH_CHAIR("High Chair"),
-    TOYS("Children’s Books or Toys"),
-    SAFETY_GATES("Baby Safety Gates"),
+    PET_FRIENDLY(R.string.amenities_pet_friendly),
+    CRIB(R.string.amenities_crib),
+    HIGH_CHAIR(R.string.amenities_high_chair),
+    TOYS(R.string.amenities_toys),
+    SAFETY_GATES(R.string.amenities_safety_gates),
 
     // Business / Tech
-    HIGH_SPEED_INTERNET("High-Speed Internet"),
-    ETHERNET("Ethernet Connection"),
-    PRINTER("Printer / Scanner"),
-    WORKSPACE("Laptop-Friendly Workspace"),
+    HIGH_SPEED_INTERNET(R.string.amenities_high_speed_internet),
+    ETHERNET(R.string.amenities_ethernet),
+    PRINTER(R.string.amenities_printer),
+    WORKSPACE(R.string.amenities_workspace),
 
     // Outdoor
-    PRIVATE_ENTRANCE("Private Entrance"),
-    PATIO("Patio / Deck"),
-    OUTDOOR_FURNITURE("Outdoor Furniture"),
-    BBQ_GRILL("BBQ Grill"),
-    FIRE_PIT("Fire Pit"),
-    YARD("Garden / Yard"),
+    PRIVATE_ENTRANCE(R.string.amenities_private_entrance),
+    PATIO(R.string.amenities_patio),
+    OUTDOOR_FURNITURE(R.string.amenities_outdoor_furniture),
+    BBQ_GRILL(R.string.amenities_bbq_grill),
+    FIRE_PIT(R.string.amenities_fire_pit),
+    YARD(R.string.amenities_yard),
 
     // Safety
-    SMOKE_DETECTOR("Smoke Detector"),
-    CO_DETECTOR("Carbon Monoxide Detector"),
-    FIRST_AID_KIT("First Aid Kit"),
-    FIRE_EXTINGUISHER("Fire Extinguisher"),
-    SECURITY_CAMERAS("Security Cameras");
-
-    override fun toString(): String = displayName
+    SMOKE_DETECTOR(R.string.amenities_smoke_detector),
+    CO_DETECTOR(R.string.amenities_co_detector),
+    FIRST_AID_KIT(R.string.amenities_first_aid_kit),
+    FIRE_EXTINGUISHER(R.string.amenities_fire_extinguisher),
+    SECURITY_CAMERAS(R.string.amenities_security_cameras);
 }
