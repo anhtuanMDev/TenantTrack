@@ -8,13 +8,13 @@ import com.example.tenanttrack.R
 
 @Entity
 data class PropertyTable(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int,
     val name: String,
     val address: String,
     val image: String?,
     @ColumnInfo(name = "total_room") val totalRoom: Int,
     @ColumnInfo(name = "model_type") val modelType: PropertyModelType,
-    @ColumnInfo(name = "status") val status: String?,
+    @ColumnInfo(name = "status") val status: PropertyStatus?,
 )
 
 enum class PropertyModelType(@StringRes val label: Int) {

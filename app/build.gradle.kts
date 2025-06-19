@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
 }
 
@@ -54,7 +55,15 @@ android {
 
 dependencies {
     val navVersion = "2.9.0"
-    val room_version = "2.7.1"
+    val room_version = "2.7.2"
+    val hiltVersion = "2.56"
+    val androidxHiltVersion = "1.2.0"
+
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
+
+    implementation("androidx.hilt:hilt-work:$androidxHiltVersion")
+    ksp("androidx.hilt:hilt-compiler:$androidxHiltVersion")
 
     implementation("androidx.room:room-runtime:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
@@ -62,6 +71,10 @@ dependencies {
     testImplementation("androidx.room:room-testing:$room_version")
     implementation("androidx.room:room-paging:$room_version")
     implementation("net.zetetic:android-database-sqlcipher:4.5.4")
+
+    implementation("androidx.compose.ui:ui:1.2.0")
+    implementation("androidx.compose.material:material:1.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
 
     implementation("androidx.navigation:navigation-compose:$navVersion")
     implementation("androidx.navigation:navigation-fragment:$navVersion")

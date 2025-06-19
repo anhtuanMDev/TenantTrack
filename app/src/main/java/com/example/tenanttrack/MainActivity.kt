@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
-import com.example.tenanttrack.presentation.navigation.RootNavGraph
+import com.example.tenanttrack.presentation.screen.navigation.RootNavGraph
 import com.example.tenanttrack.ui.theme.TenantTrackTheme
 
 class MainActivity : ComponentActivity() {

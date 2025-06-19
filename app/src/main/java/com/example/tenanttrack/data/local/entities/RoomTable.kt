@@ -1,7 +1,6 @@
 package com.example.tenanttrack.data.local.entities
 
 import androidx.annotation.StringRes
-import androidx.compose.ui.res.stringResource
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,7 +8,7 @@ import com.example.tenanttrack.R
 
 @Entity
 data class RoomTable(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "property_id") val propertyID: Int,
     val name: String,
     val floor: String,

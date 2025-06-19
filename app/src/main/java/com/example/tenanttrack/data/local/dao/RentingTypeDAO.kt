@@ -4,11 +4,12 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.tenanttrack.data.local.entities.RentingTypeTable
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RentingTypeDAO {
     @Query("SELECT * FROM RentingTypeTable")
-    fun getAll(): List<RentingTypeTable>
+    fun getAll(): Flow<List<RentingTypeTable>>
 
     // delete all
     @Query("DELETE FROM RentingTypeTable")
@@ -20,5 +21,5 @@ interface RentingTypeDAO {
 
     // create
     @Insert
-    fun insert(vararg rentingTypes: RentingTypeTable)
+    fun insert(vararg rentingTypes: RentingTypeTable) : LongArray
 }

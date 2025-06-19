@@ -3,6 +3,7 @@ package com.example.tenanttrack.converters
 import androidx.room.TypeConverter
 import com.example.tenanttrack.data.local.entities.PropertyModelType
 import com.example.tenanttrack.data.local.entities.PropertyRentType
+import com.example.tenanttrack.data.local.entities.PropertyStatus
 import com.example.tenanttrack.data.local.entities.RoomAmenities
 import com.example.tenanttrack.data.local.entities.RoomStatus
 import com.example.tenanttrack.data.local.entities.TenantStatus
@@ -16,6 +17,12 @@ class Converters {
 
     @TypeConverter
     fun toPropertyModelType(value: String): PropertyModelType = PropertyModelType.valueOf(value)
+
+    @TypeConverter
+    fun fromPropertyStatus(model: PropertyStatus): String = model.name
+
+    @TypeConverter
+    fun toPropertyStatus(value: String): PropertyStatus = PropertyStatus.valueOf(value)
 
     @TypeConverter
     fun fromPropertyRentType(rentType: PropertyRentType): String = rentType.name

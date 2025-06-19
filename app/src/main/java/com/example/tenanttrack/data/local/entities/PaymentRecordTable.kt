@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class PaymentRecordTable (
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "tenant_id") val tenantID: Int,
     @ColumnInfo(name = "rent")val rentMoney: Int,
     @ColumnInfo(name = "paid_date") val paidDate: Int,

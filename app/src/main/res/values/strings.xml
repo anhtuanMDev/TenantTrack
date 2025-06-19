@@ -5,6 +5,17 @@
     <string name="option_cancel">Cancel</string>
     <string name="option_save">Save</string>
 
+    // for validate error
+    <string name="error_minimum_digit_length">You need to input at lease %1$d digits</string>
+    <string name="error_minimum_character_length">You need to input at lease %1$d characters</string>
+    <string name="error_minimum_value">Minimum input is %1$d</string>
+    <string name="error_maximum_value">Maximum input is %1$d</string>
+    <string name="error_field_cant_be_blank">The field must not be blank</string>
+    <string name="error_invalid_digit">That\'s not a valid number</string>
+    <string name="error_invalid_email">That\'s not a valid email</string>
+    <string name="error_invalid_phone">That\'s not a valid phone number</string>
+
+
     // for nav header
     <string name="header_add_property">Add Property</string>
 

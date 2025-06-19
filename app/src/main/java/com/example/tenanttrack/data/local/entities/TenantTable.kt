@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class TenantTable(
-    @PrimaryKey val uid: Int,
+    @PrimaryKey(autoGenerate = true) val uid: Int,
     @ColumnInfo(name = "room_id") val roomID: Int,
     val relationship: String,
     val status: TenantStatus,

@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.example.tenanttrack.R
 
 sealed class ValidateUIText {
     data class DynamicString(val value: String): ValidateUIText()
