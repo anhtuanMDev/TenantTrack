@@ -16,13 +16,13 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -30,8 +30,6 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.tenanttrack.domain.model.ValidateUIText
 import com.example.tenanttrack.domain.utils.ValidateUtils
-import com.example.tenanttrack.ui.theme.Gray200
-import androidx.compose.runtime.getValue
 import com.example.tenanttrack.ui.theme.Gray600
 
 
@@ -50,11 +48,11 @@ fun FormTextField(
     trailingIcon: @Composable (() -> Unit)? = null,
     singleLine: Boolean = false,
     maxLine: Int = 1,
+    minLine: Int = 1,
 ) {
     val utils = ValidateUtils()
     val isKeyboardTypeNumber =
         keyboardType == KeyboardType.Phone || keyboardType == KeyboardType.Number
-    val context = LocalContext.current
     val interactionSource = remember { MutableInteractionSource() }
     val isFocused by interactionSource.collectIsFocusedAsState()
     val focusRequester = remember {
@@ -73,8 +71,9 @@ fun FormTextField(
                     if (utils.isNumber(it)) onValueChange(it)
                 } else onValueChange(it)
             },
-            textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onSurface),
+            textStyle = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onBackground),
             maxLines = maxLine,
+            minLines = minLine,
             singleLine = singleLine,
             interactionSource = interactionSource,
             visualTransformation =
@@ -85,7 +84,7 @@ fun FormTextField(
                 },
             keyboardOptions = KeyboardOptions(
                 keyboardType = keyboardType,
-                imeAction = imeAction
+                imeAction = imeAction,
             ),
             cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
             decorationBox = { innerTextField ->
@@ -98,7 +97,7 @@ fun FormTextField(
                             color = colorBorder
                         )
                         .background(
-                            color = MaterialTheme.colorScheme.surface,
+                            color = MaterialTheme.colorScheme.background,
                             shape = RoundedCornerShape(8.dp)
                         )
                         .focusRequester(focusRequester)
@@ -132,12 +131,17 @@ fun FormTextField(
                 }
             },
         )
-        Text(
-            text = if (isError) errorMessage!!.asString(context) else "",
-            color = MaterialTheme.colorScheme.error,
-            style = MaterialTheme.typography.bodySmall,
-            modifier = modifier
-        )
+        if (isError) {
+            errorMessage?.asString()?.let {
+                Text(
+                    text = if (it.isNotBlank()) errorMessage.asString().toString() else "",
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = modifier
+                )
+            }
+        }
+
     }
 }
 

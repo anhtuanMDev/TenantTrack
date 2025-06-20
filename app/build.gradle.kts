@@ -54,36 +54,34 @@ android {
 }
 
 dependencies {
-    val navVersion = "2.9.0"
-    val room_version = "2.7.2"
-    val hiltVersion = "2.56"
-    val androidxHiltVersion = "1.2.0"
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-    implementation("com.google.dagger:hilt-android:$hiltVersion")
-    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
+    implementation(libs.androidx.hilt.work)
+    ksp(libs.androidx.hilt.compiler)
 
-    implementation("androidx.hilt:hilt-work:$androidxHiltVersion")
-    ksp("androidx.hilt:hilt-compiler:$androidxHiltVersion")
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
+    implementation(libs.room.ktx)
+    testImplementation(libs.room.testing)
+    implementation(libs.room.paging)
 
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
-    testImplementation("androidx.room:room-testing:$room_version")
-    implementation("androidx.room:room-paging:$room_version")
-    implementation("net.zetetic:android-database-sqlcipher:4.5.4")
+    implementation(libs.sqlcipher)
 
-    implementation("androidx.compose.ui:ui:1.2.0")
-    implementation("androidx.compose.material:material:1.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+    implementation(libs.compose.ui)
+    implementation(libs.compose.material)
+    implementation(libs.viewmodel.compose)
 
-    implementation("androidx.navigation:navigation-compose:$navVersion")
-    implementation("androidx.navigation:navigation-fragment:$navVersion")
-    implementation("androidx.navigation:navigation-ui:$navVersion")
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:$navVersion")
-    androidTestImplementation("androidx.navigation:navigation-testing:$navVersion")
+    implementation(libs.navigation.compose)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation.dynamic)
+    androidTestImplementation(libs.navigation.testing)
 
-    // JSON serialization library, works with the Kotlin serialization plugin
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation(libs.coil.compose)
+    implementation(libs.ucrop)
+
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
