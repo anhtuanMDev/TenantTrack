@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
 import com.example.tenanttrack.presentation.screen.navigation.RootNavGraph
 import com.example.tenanttrack.ui.theme.TenantTrackTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+//@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

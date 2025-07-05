@@ -9,7 +9,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -35,7 +34,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import coil3.compose.AsyncImage
@@ -45,12 +43,11 @@ import com.example.tenanttrack.data.local.entities.PropertyStatus
 import com.example.tenanttrack.domain.model.PropertyFormEvent
 import com.example.tenanttrack.domain.utils.CropUtils
 import com.example.tenanttrack.presentation.components.FilterChips
+import com.example.tenanttrack.presentation.components.FormSection
 import com.example.tenanttrack.presentation.components.FormTextField
 import com.example.tenanttrack.presentation.components.PropertyHeaderBar
 import com.example.tenanttrack.presentation.viewmodel.PropertyFormViewModel
-import com.example.tenanttrack.ui.theme.Blue
 import com.example.tenanttrack.ui.theme.Gray200
-import com.example.tenanttrack.ui.theme.Gray600
 
 @Composable
 fun AddPropertyScreen(navController: NavController) {
@@ -113,7 +110,7 @@ fun AddPropertyBody(onGoBack: () -> Unit, viewModel: PropertyFormViewModel = vie
             },
         )
 
-        SectionTile(
+        FormSection(
             title = stringResource(id = R.string.add_property_title1),
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
@@ -132,11 +129,11 @@ fun AddPropertyBody(onGoBack: () -> Unit, viewModel: PropertyFormViewModel = vie
             )
         }
 
-        SectionTile(title = stringResource(id = R.string.add_property_title2)) {
+        FormSection(title = stringResource(id = R.string.add_property_title2)) {
             FilterChips(categories = listModelType, selectedCategory = "Hut") { }
         }
 
-        SectionTile(
+        FormSection(
             title = stringResource(id = R.string.add_property_title3),
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
@@ -157,7 +154,7 @@ fun AddPropertyBody(onGoBack: () -> Unit, viewModel: PropertyFormViewModel = vie
             )
         }
 
-        SectionTile(
+        FormSection(
             title = stringResource(id = R.string.add_property_title4),
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
@@ -176,11 +173,11 @@ fun AddPropertyBody(onGoBack: () -> Unit, viewModel: PropertyFormViewModel = vie
             )
         }
 
-        SectionTile(title = stringResource(id = R.string.add_property_title5)) {
+        FormSection(title = stringResource(id = R.string.add_property_title5)) {
             FilterChips(categories = listStatus, selectedCategory = "Maintained") { }
         }
 
-        SectionTile(
+        FormSection(
             title = stringResource(id = R.string.add_property_title6),
             modifier = Modifier.padding(horizontal = 16.dp),
         ) {
@@ -221,24 +218,4 @@ fun AddPropertyBody(onGoBack: () -> Unit, viewModel: PropertyFormViewModel = vie
             }
         }
     }
-}
-
-@Composable
-fun SectionTile(
-    title: String,
-    modifier: Modifier = Modifier,
-    content: @Composable ColumnScope.() -> Unit
-) {
-    Text(
-        text = title,
-        style = MaterialTheme.typography.bodyMedium.copy(
-            color = Gray600,
-            fontWeight = FontWeight.W600
-        ),
-        modifier = Modifier.padding(bottom = 8.dp, top = 12.dp, start = 16.dp, end = 16.dp)
-    )
-    Column(
-        modifier = modifier,
-        content = content
-    )
 }

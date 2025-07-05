@@ -42,6 +42,7 @@ private val LightColorScheme = lightColorScheme(
 
     surface = White,              // Màu nền của card, sheet, dialog
     onSurface = Gray900,          // Text trên surface
+    onSurfaceVariant = Gray400,
 
     error = Error,                // Màu thông báo lỗi
     onError = White,              // Text trên nền error

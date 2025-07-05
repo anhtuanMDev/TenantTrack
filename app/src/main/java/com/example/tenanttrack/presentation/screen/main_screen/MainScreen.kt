@@ -84,7 +84,7 @@ fun MainScreen(rootNavController: NavHostController, bottomNav: NavHostControlle
             if (currentRoute.route == Screen.Property.route) {
                 FloatingActionButton(
                     containerColor = Blue,
-                    onClick = { rootNavController.navigate(Graph.ADD_PROPERTY) }
+                    onClick = { rootNavController.navigate(Graph.ADD_TENANT) }
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.plus),

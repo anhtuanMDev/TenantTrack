@@ -4,6 +4,7 @@
     <string name="empty_string" />
     <string name="option_cancel">Cancel</string>
     <string name="option_save">Save</string>
+    <string name="add_photo">Add photo</string>
 
     // for validate error
     <string name="error_minimum_digit_length">You need to input at lease %1$d digits</string>
@@ -18,6 +19,8 @@
 
     // for nav header
     <string name="header_add_property">Add Property</string>
+    <string name="header_add_tenant">Add Tenant</string>
+    <string name="header_add_room">Add Room</string>
 
     // for tab header
     <string name="tab1_title">Properties</string>
@@ -75,6 +78,22 @@
     <string name="add_property_title5">Property Status</string>
     <string name="add_property_title6">Property Image</string>
     <string name="add_property_placeholder6">Tap to add image</string>
+
+    // for add tenant form
+    <string name="add_tenant_header">Tenant\' Information</string>
+
+    <string name="add_tenant_helper_like_main">Like Main</string>
+    <string name="add_tenant_title1">Full Name</string>
+    <string name="add_tenant_placeholder1">Enter tenant\'s full name</string>
+    <string name="add_tenant_title2">Email Address</string>
+    <string name="add_tenant_placeholder2">Enter email address</string>
+    <string name="add_tenant_title3">Phone Number</string>
+    <string name="add_tenant_placeholder3">Enter phone number</string>
+    <string name="add_tenant_title4">Emergency Name</string>
+    <string name="add_tenant_placeholder4">Tenant\'s emergency contact name</string>
+    <string name="add_tenant_title5">Emergency Phone</string>
+    <string name="add_tenant_placeholder5">Tenant\'s emergency contact phone number</string>
+
 
     // for property type
     <string name="property_type_apartment">Apartment</string>

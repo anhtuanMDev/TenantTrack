@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.tenanttrack.presentation.screen.add_property.AddPropertyScreen
+import com.example.tenanttrack.presentation.screen.add_room.AddTenantScreen
 import com.example.tenanttrack.presentation.screen.main_screen.MainScreen
 
 @Composable
@@ -21,6 +22,9 @@ fun RootNavGraph(navController: NavHostController) {
         }
         composable(Graph.ADD_PROPERTY) {
             AddPropertyScreen(navController)
+        }
+        composable(Graph.ADD_TENANT) {
+            AddTenantScreen(navController)
         }
     }
 }
